@@ -1,0 +1,12 @@
+*.iso
+*.ova
+*.vdi
+*.vmdk
+*.pem
+*.key
+*.pfx
+*.p12
+*.env
+*.csv
+*accessKeys*
+*credentials*

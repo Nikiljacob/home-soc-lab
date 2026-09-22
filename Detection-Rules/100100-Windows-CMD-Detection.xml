@@ -1,0 +1,21 @@
+<!--
+Custom Wazuh detection rule
+Purpose: Detect Windows Command Prompt process creation through Sysmon.
+
+Created for SOC-002 in the Home SOC Lab.
+
+Note:
+cmd.exe is a legitimate Windows utility. This rule was intentionally
+configured for lab/detection-engineering practice and should not be treated
+as proof of malicious activity by itself.
+-->
+
+<group name="windows,sysmon,custom_detection,">
+
+  <rule id="100100" level="6">
+    <if_group>sysmon_event1</if_group>
+    <field name="win.eventdata.image">\\cmd\.exe$</field>
+    <description>Custom detection: Windows Command Prompt launched</description>
+  </rule>
+
+</group>
